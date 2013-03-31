@@ -187,7 +187,7 @@ public class Plugin extends JavaPlugin implements Listener {
         Player player = event.getPlayer();
         Entity entity = event.getRightClicked();
         
-        if(entity instanceof Chicken) {
+        if(entity instanceof Chicken && player.isSneaking()) {
             entity.setPassenger(player);
             debug("Player {0} mounted chicken {1} at {2}", player, entity, entity.getLocation());
         }
